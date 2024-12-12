@@ -1,4 +1,4 @@
-fun index () = return <xml>
+fun index () : transaction page = return <xml>
   <head>
     <title>HTML Local Storage Example</title>
   </head>
@@ -24,15 +24,15 @@ fun index () = return <xml>
 		       <article>
 			 <h1>Web Storage example</h1>
 
-			 
+
 			 <label>New value for storage:</label>
 			 <ctextbox source={foo}></ctextbox>
 			 <br/>
-			 
+
 			 <button value="Save Text to Local Storage" onclick={fn _ => save ()}>
 			 </button>
-			 <br/>		 
-			 
+			 <br/>
+
 			 <h2>Storage contents</h2>
 			 <dyn signal={v <- signal res; return <xml><p>{[v]}</p></xml>}></dyn>
 			 <p>Try reloading the page to see if storage is persistent!</p>
